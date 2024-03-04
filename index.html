@@ -2,21 +2,12 @@
 layout: default
 title: Home
 ---
-{% for post in paginator.posts %}
-<h1>{{ post.title }}</h1>
-{{ post.content }}
+</br>
+{% for post in site.posts %}
+<a href="{{ post.url | relative_url }}">{{ post.title }}</a>&ensp;<small><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time></small>
+</br>
+</br>
 {% endfor %}
-<hr></hr>
-{% if paginator.next_page %}
-  <a href="{{ paginator.next_page_path | relative_url }}">Older Post</a>
-{% else %}
-{% endif %}
-
-{% if paginator.previous_page %}
-  &emsp;
-  <a href="{{ paginator.previous_page_path | prepend: relative_url }}">Newer Post</a>
-{% else %}
-{% endif %}
 
 
 
