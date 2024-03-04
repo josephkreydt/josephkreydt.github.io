@@ -1,0 +1,44 @@
+# Setup
+title: Joseph Kreydt
+tagline: Catholic. Writer.
+url: https://josephkreydt.github.io
+paginate: 1
+baseurl: ""
+permalink: /:title
+
+# Gems
+plugins:
+  - jekyll-paginate
+  - jekyll-seo-tag
+
+# Optimize Jekyll
+exclude:
+  - .editorconfig
+  - .git
+  - .jekyll-cache
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE.md
+  - README.md
+ 
+sass:
+  sass_dir: _sass
+  style: :compressed
+
+# Options
+
+# Specify the author for blog posts
+author:
+  name: Joseph Kreydt
+  url: https:www.instagram.com/josephkreydt
+  email: none@gmail.com
+
+# Custom vars
+version: 3.0.0
+
+defaults:
+ -
+  scope:
+    path: "_posts"
+  values:
+    layout: "post"

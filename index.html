@@ -1,0 +1,28 @@
+---
+layout: default
+title: Home
+---
+{% for post in paginator.posts %}
+<h1>{{ post.title }}</h1>
+{{ post.content }}
+{% endfor %}
+<hr></hr>
+{% if paginator.next_page %}
+  <a href="{{ paginator.next_page_path | relative_url }}">Older Post</a>
+{% else %}
+{% endif %}
+
+{% if paginator.previous_page %}
+  &emsp;
+  <a href="{{ paginator.previous_page_path | prepend: relative_url }}">Newer Post</a>
+{% else %}
+{% endif %}
+
+
+
+
+
+
+
+
+
