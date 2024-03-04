@@ -2,18 +2,20 @@
 layout: default
 title: Latest Post
 ---
-{% for post in site.posts %}
-<h1>{{ post.title }}</h1>
-{{ post.content }}
+{% for post in paginator.posts %}
+  <h1>{{ post.title }}</h1>
+  {{ post.content }}
 {% endfor %}
+
 <hr></hr>
-{% if site.next_page %}
-  <a href="{{ site.next_page_path | relative_url }}">Older Post</a>
+
+{% if .next_page %}
+  <a href="{{ paginator.next_page_path | relative_url }}">Older Post</a>
 {% else %}
 {% endif %}
 
-{% if site.previous_page %}
+{% if paginator.previous_page %}
   &emsp;
-  <a href="{{ site.previous_page_path | prepend: relative_url }}">Newer Post</a>
+  <a href="{{ paginator.previous_page_path | prepend: relative_url }}">Newer Post</a>
 {% else %}
 {% endif %}
